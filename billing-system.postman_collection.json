@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "20ea1f8c-e1bd-47de-96e6-10c0c3689a64",
+		"name": "billing-system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14188895",
+		"_collection_link": "https://orange-eclipse-500705.postman.co/workspace/sc~3430c519-6754-4f4c-92a3-a5fedb65f2c5/collection/14188895-20ea1f8c-e1bd-47de-96e6-10c0c3689a64?action=share&source=collection_link&creator=14188895"
+	},
+	"item": [
+		{
+			"name": "Authentication-Controller",
+			"item": [
+				{
+					"name": "registeredByUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Kyat Hlaw\",\r\n    \"email\":\"hyathlaw14994@gmail.com\",\r\n    \"phoneNumber\":\"959698648953\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{billing-system}}/api/auth/registeredByUser",
+							"host": [
+								"{{billing-system}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"registeredByUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registeredByAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Kyaw Kyaw Latt\",\r\n    \"email\":\"kyawlatt14994@gmail.com\",\r\n    \"phoneNumber\":\"9595310432\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{billing-system}}/api/auth/registeredByAdmin",
+							"host": [
+								"{{billing-system}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"registeredByAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"username\":\"Kyat Hlaw\",\r\n \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{billing-system}}/api/auth/login",
+							"host": [
+								"{{billing-system}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin-Controller",
+			"item": [
+				{
+					"name": "addBillInSystem",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLeWF3IEt5YXcgTGF0dCIsImlhdCI6MTY5MzM4MDQwMSwiZXhwIjoxNjkzMzgwNTgxfQ.OhTkgf67NvLjE_v_XHvWMqC4Qy7yUtGPG96YXD2SR14",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Top UP\",\r\n    \"description\":\"test-top-up\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{billing-system}}/api/admin/add",
+							"host": [
+								"{{billing-system}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByBillId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLeWF3IEt5YXcgTGF0dCIsImlhdCI6MTY5MzM4MDQwMSwiZXhwIjoxNjkzMzgwNTgxfQ.OhTkgf67NvLjE_v_XHvWMqC4Qy7yUtGPG96YXD2SR14",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{billing-system}}/api/admin/list?id=1",
+							"host": [
+								"{{billing-system}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"list"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User-Controller",
+			"item": [
+				{
+					"name": "payBillInSystem",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLeWF3IEt5YXcgTGF0dCIsImlhdCI6MTY5MzM4MDQwMSwiZXhwIjoxNjkzMzgwNTgxfQ.OhTkgf67NvLjE_v_XHvWMqC4Qy7yUtGPG96YXD2SR14",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"apiCaller\":\"Citizen Pay\",\r\n    \"referenceNo\":\"kkh123456\",\r\n    \"phoneNumber\":\"959698648953\",\r\n    \"amount\": 1000,\r\n    \"billId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{billing-system}}/api/user/pay",
+							"host": [
+								"{{billing-system}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"pay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByTransactionId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLeWF0IEhsYXciLCJpYXQiOjE2OTMzODA1OTksImV4cCI6MTY5MzM4MDc3OX0.X_P8Vm2BOD9Q13r84WsPozU3vBkNJwwvnpJjkZ2zPhU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{billing-system}}/api/user/transaction?id=2",
+							"host": [
+								"{{billing-system}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"transaction"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
