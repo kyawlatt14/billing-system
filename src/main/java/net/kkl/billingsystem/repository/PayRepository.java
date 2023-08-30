@@ -1,0 +1,12 @@
+package net.kkl.billingsystem.repository;
+
+import net.kkl.billingsystem.entities.Pay;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface PayRepository extends JpaRepository<Pay,Integer> {
+    boolean existsByReferenceNo(String referenceNo);
+}

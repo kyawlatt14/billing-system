@@ -1,0 +1,29 @@
+spring:
+  banner:
+    location: classpath:billing_system.txt
+  application:
+    name: BILL-SYSTEM
+  datasource:
+    url: jdbc:mysql://localhost/bill_system_db?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
+    username: root
+    password: Kkl@14994
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+application:
+  security:
+    jwt:
+      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      expiration: 180000
+      refresh-token:
+        expiration: 420000
+logging:
+  level:
+    root: warn
+    com:
+      sc: trace
+server:
+  port: 9091
+
+
