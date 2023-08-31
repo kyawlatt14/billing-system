@@ -1,1 +1,0 @@
-You need to change DATABASE-NAEM and DATABASE-PASSWORD in your app in application-dev.yml
