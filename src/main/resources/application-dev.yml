@@ -2,7 +2,7 @@ spring:
   banner:
     location: classpath:billing_system.txt
   application:
-    name: BILL-SYSTEM
+    name: BILLING-SYSTEM
   datasource:
     url: jdbc:mysql://localhost/bill_system_db?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
     username: root
