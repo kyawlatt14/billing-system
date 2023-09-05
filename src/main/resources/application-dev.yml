@@ -5,8 +5,8 @@ spring:
     name: BILLING-SYSTEM
   datasource:
     url: jdbc:mysql://localhost/bill_system_db?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
-    username: root
-    password: Kkl@14994
+    username: 
+    password: 
   jpa:
     hibernate:
       ddl-auto: update
